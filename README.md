@@ -1,34 +1,22 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Map Creation Project
 
-## Getting Started
+The goal of this project is to create an interactive space map, where different elements such as planets, comets, and suns can be placed in different positions on the map using POST requests to an API.
 
-First, run the development server:
+## Project Phases
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+### Phase 1: Completing the Map with Polyanets
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+In this initial phase, the main objective is to complete the map with elements called "Polyanets". These elements are placed manually using POST requests to the corresponding API. The process involves identifying the positions where Polyanets are desired and using the `handleCreatePolyanet` function to create them.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Phase 2: Automated Element Creation
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+In this phase, the process of creating elements on the map is automated. The map is represented as a matrix, and the `createMap` function iterates over each position in the matrix. Depending on the value at that position (e.g., "SPACE", "POLYANET", "BLUE_SOLOON", etc.), the appropriate functions are used to create the corresponding element.
 
-## Learn More
+An important step in this phase is introducing a delay between the POST requests to create the elements. This is done to avoid overloading the API and to ensure that the requests are made effectively. The `delay` function is used to add the desired delay between requests.
 
-To learn more about Next.js, take a look at the following resources:
+## Usage Instructions
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+1. Clone this repository on your local machine.
+2. Install project dependencies using the command `npm install`.
+3. Modify the necessary variables in the code files to set up your credentials and configurations.
+4. Run the application using the command `npm start` or similar, depending on your project's setup.
